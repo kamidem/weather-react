@@ -1,0 +1,34 @@
+.daily {
+  display: inline-block;
+  float: left;
+  width: calc(20% - 10px);
+  text-align: center;
+  margin: 5px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.15);
+  background-image: linear-gradient(
+    to top,
+    rgba(162, 196, 232, 0.7) 0%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+}
+.forecast-max {
+  font-size: 22px;
+}
+.forecast-min {
+  font-size: 19px;
+}
+.daily-temp {
+  margin-bottom: 0;
+}
+.daily-weekday {
+  font-size: 19px;
+}
+.daily-image {
+  font-size: 150%;
+  color: #a7c5eb;
+  width: 70px;
+}
+.daily-date {
+  font-size: 14px;
+}
