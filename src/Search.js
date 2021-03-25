@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import cursor from './img/cursor.png';
 import location from "./img/location.png";
 import "./css/search.css";
