@@ -1,5 +1,6 @@
 import React from "react";
 import "./css/daily.css";
+//import axios from 'axios';
 
 export default function Daily() {
   return (

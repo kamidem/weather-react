@@ -1,5 +1,6 @@
 import React from "react";
 import "./css/hourly.css";
+//import axios from 'axios';
 
 export default function Hourly() {
   return (

@@ -1,11 +1,33 @@
-import React from "react";
+import React, {useState} from "react";
 import "./css/app.css";
 import Daily from "./Daily.js";
 import Hourly from "./Hourly.js";
 import github from "./img/github-icon.png";
 import Search from "./Search";
+import axios from 'axios';
 
 export default function App() {
+  const [weatherData, setWeatherData] = useState({});
+  const [loaded, setLoaded] = useState(false)
+
+  function handleResponse(response) {
+    console.log(response);
+    setWeatherData({
+      temp: response.data.main.temp,
+      wind: response.data.wind.speed,
+      humidity: response.data.main.humidity,
+      feels: response.data.main.feels_like,
+      description: response.data.weather[0].description,
+      icon: 'http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png'
+    });
+    
+    setLoaded(true);
+  }
+
+  
+
+
+  if(loaded) {
   return (
     <div className="app">
       <div className="page-title">
@@ -16,9 +38,9 @@ export default function App() {
         <div className="top-container">
           <div className="column-1">
             <span className="city-name">London</span>
-            <span className="today-description">Cloudy</span>
+            <span className="today-description">{weatherData.description}</span>
             <br />
-            <span className="main-temp">17</span>
+            <span className="main-temp">{Math.round(weatherData.temp)}</span>
             <a href="/" className="c-link active">
               °C
             </a>{" "}
@@ -30,16 +52,16 @@ export default function App() {
 
           <div className="column-2">
             <img
-              src="/"
+              src={weatherData.icon}
               alt="todays weather icon"
               className="today-weather-image"
             />
             <p className="weather-details">
-              feels like &emsp; <span className="feels-like">20</span>°
+              feels like &emsp; <span className="feels-like">{Math.round(weatherData.feels)}</span>°
               <br />
-              wind speed &emsp; <span className="wind">4</span> km/h
+              wind speed &emsp; <span className="wind">{Math.round(weatherData.wind)}</span> km/h
               <br />
-              humidity &emsp; <span className="humidity">33</span>%
+              humidity &emsp; <span className="humidity">{weatherData.humidity}</span>%
             </p>
           </div>
 
@@ -65,4 +87,11 @@ export default function App() {
       </div>
     </div>
   );
+  } else {
+    let city = 'London';
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=ecc7fef62a02dbb22a9dbe2d8e3727b7`;
+    axios.get(apiUrl).then(handleResponse);
+
+    return 'Loading...';
+  }
 }
