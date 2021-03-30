@@ -1,13 +1,16 @@
 import React, {useState} from "react";
 import "./css/app.css";
 import github from "./img/github-icon.png";
-import Search from "./Search";
+import cursor from './img/cursor.png';
+import location from "./img/location.png";
 import WeatherInfo from './WeatherInfo'
 import axios from 'axios';
+import "./css/search.css";
 
 export default function App() {
-  const [weatherData, setWeatherData] = useState({});
-  const [loaded, setLoaded] = useState(false)
+  const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState('London');
+
 
   function handleResponse(response) {
     console.log(response);
@@ -23,8 +26,23 @@ export default function App() {
       city: response.data.name
     });
     
-    setLoaded(true);
   }
+
+  function search(){
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=ecc7fef62a02dbb22a9dbe2d8e3727b7`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function handleCityName(event) {
+    setCity(event.target.value);
+  }
+
+
 
   if(weatherData.ready) {
   return (
@@ -32,7 +50,33 @@ export default function App() {
       <div className="page-title">
         <h1>Weather App</h1>
       </div>
-      <Search />
+      <div className="search-container">
+        <form onSubmit={handleSubmit}>
+          <img
+            src={location}
+            className="location-search-icon"
+            alt="location"
+            width="15px"
+          />
+          <input
+            type="search"
+            autoComplete="off"
+            placeholder="enter a city"
+            className="city-input"
+            onChange={handleCityName}
+          />
+          <button type="submit" className="search-button">
+            SEARCH
+          </button>
+          <button
+            type="submit"
+            className="my-location-button"
+            title="find my location"
+          >
+            <img src={cursor} alt="find my location" />
+          </button>
+        </form>
+      </div>
       <WeatherInfo info={weatherData}/>
       <div className="code-by">
         <a href="https://github.com/kamidem/weather-react" target="blank">
@@ -46,7 +90,6 @@ export default function App() {
     </div>
   );
   } else {
-    let city = 'London';
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=ecc7fef62a02dbb22a9dbe2d8e3727b7`;
     axios.get(apiUrl).then(handleResponse);
 
