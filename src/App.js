@@ -4,6 +4,7 @@ import Daily from "./Daily.js";
 import Hourly from "./Hourly.js";
 import github from "./img/github-icon.png";
 import Search from "./Search";
+import FormatedDate from './FormatedDate.js';
 import axios from 'axios';
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
     console.log(response);
     setWeatherData({
       ready: true,
+      date: new Date(response.data.dt * 1000),
       temp: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
@@ -68,9 +70,7 @@ export default function App() {
           </div>
 
           <div className="column-3">
-            <div className="last-updated">
-              
-            </div>
+            <FormatedDate date={weatherData.date}/>
             <br />
             <Hourly />
           </div>
