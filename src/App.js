@@ -13,12 +13,14 @@ export default function App() {
   function handleResponse(response) {
     console.log(response);
     setWeatherData({
+      ready: true,
       temp: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
       feels: response.data.main.feels_like,
       description: response.data.weather[0].description,
-      icon: 'http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png'
+      icon: 'http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png',
+      city: response.data.name
     });
     
     setLoaded(true);
@@ -27,7 +29,7 @@ export default function App() {
   
 
 
-  if(loaded) {
+  if(weatherData.ready) {
   return (
     <div className="app">
       <div className="page-title">
@@ -37,7 +39,7 @@ export default function App() {
       <div className="main-body-container">
         <div className="top-container">
           <div className="column-1">
-            <span className="city-name">London</span>
+            <span className="city-name">{weatherData.city}</span>
             <span className="today-description">{weatherData.description}</span>
             <br />
             <span className="main-temp">{Math.round(weatherData.temp)}</span>
@@ -66,7 +68,9 @@ export default function App() {
           </div>
 
           <div className="column-3">
-            <div className="last-updated">Last updated: Friday 12:45</div>
+            <div className="last-updated">
+              
+            </div>
             <br />
             <Hourly />
           </div>
