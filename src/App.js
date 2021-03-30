@@ -1,10 +1,8 @@
 import React, {useState} from "react";
 import "./css/app.css";
-import Daily from "./Daily.js";
-import Hourly from "./Hourly.js";
 import github from "./img/github-icon.png";
 import Search from "./Search";
-import FormatedDate from './FormatedDate.js';
+import WeatherInfo from './WeatherInfo'
 import axios from 'axios';
 
 export default function App() {
@@ -28,9 +26,6 @@ export default function App() {
     setLoaded(true);
   }
 
-  
-
-
   if(weatherData.ready) {
   return (
     <div className="app">
@@ -38,48 +33,7 @@ export default function App() {
         <h1>Weather App</h1>
       </div>
       <Search />
-      <div className="main-body-container">
-        <div className="top-container">
-          <div className="column-1">
-            <span className="city-name">{weatherData.city}</span>
-            <span className="today-description">{weatherData.description}</span>
-            <br />
-            <span className="main-temp">{Math.round(weatherData.temp)}</span>
-            <a href="/" className="c-link active">
-              °C
-            </a>{" "}
-            <span className="c-f-detail">|</span>{" "}
-            <a href="/" className="f-link">
-              °F
-            </a>
-          </div>
-
-          <div className="column-2">
-            <img
-              src={weatherData.icon}
-              alt="todays weather icon"
-              className="today-weather-image"
-            />
-            <p className="weather-details">
-              feels like &emsp; <span className="feels-like">{Math.round(weatherData.feels)}</span>°
-              <br />
-              wind speed &emsp; <span className="wind">{Math.round(weatherData.wind)}</span> km/h
-              <br />
-              humidity &emsp; <span className="humidity">{weatherData.humidity}</span>%
-            </p>
-          </div>
-
-          <div className="column-3">
-            <FormatedDate date={weatherData.date}/>
-            <br />
-            <Hourly />
-          </div>
-        </div>
-
-        <div className="bottom-container">
-          <Daily />
-        </div>
-      </div>
+      <WeatherInfo info={weatherData}/>
       <div className="code-by">
         <a href="https://github.com/kamidem/weather-react" target="blank">
           <img src={github} alt="github icon" className="github-icon" />
