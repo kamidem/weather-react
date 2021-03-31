@@ -2,6 +2,7 @@ import React from 'react';
 import Daily from "./Daily";
 import Hourly from "./Hourly";
 import FormatedDate from './FormatedDate';
+import WeatherIcon from './WeatherIcon';
 
 export default function WeatherInfo(props) {
   return ( <div className="main-body-container">
@@ -21,11 +22,7 @@ export default function WeatherInfo(props) {
           </div>
 
           <div className="column-2">
-            <img
-              src={props.info.icon}
-              alt="todays weather icon"
-              className="today-weather-image"
-            />
+            <WeatherIcon code={props.info.icon} />
             <p className="weather-details">
               feels like &emsp; <span className="feels-like">{Math.round(props.info.feels)}</span>°
               <br />

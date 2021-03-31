@@ -22,7 +22,7 @@ export default function App() {
       humidity: response.data.main.humidity,
       feels: response.data.main.feels_like,
       description: response.data.weather[0].description,
-      icon: 'http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png',
+      icon: response.data.weather[0].icon,
       city: response.data.name
     });
     
