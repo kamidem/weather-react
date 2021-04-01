@@ -3,6 +3,7 @@ import Daily from "./Daily";
 import Hourly from "./Hourly";
 import FormatedDate from './FormatedDate';
 import WeatherIcon from './WeatherIcon';
+import WeatherTemp from './WeatherTemp';
 
 export default function WeatherInfo(props) {
   return ( <div className="main-body-container">
@@ -11,14 +12,8 @@ export default function WeatherInfo(props) {
             <span className="city-name">{props.info.city}</span>
             <span className="today-description">{props.info.description}</span>
             <br />
-            <span className="main-temp">{Math.round(props.info.temp)}</span>
-            <a href="/" className="c-link active">
-              °C
-            </a>{" "}
-            <span className="c-f-detail">|</span>{" "}
-            <a href="/" className="f-link">
-              °F
-            </a>
+            <WeatherTemp celsius={props.info.temp}/>
+        
           </div>
 
           <div className="column-2">
