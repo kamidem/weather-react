@@ -6,14 +6,14 @@ import WeatherIcon from './WeatherIcon';
 export default function Hourly(props) {
 
 
-  function handleResponse(response) {
-    console.log(response);
-  }
+  // function handleResponse(response) {
+  //   console.log(response);
+  // }
 
-  let lon = props.coords.lon;
-  let lat = props.coords.lat;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=ecc7fef62a02dbb22a9dbe2d8e3727b7&units=metric`;
-  axios.get(apiUrl).then(handleResponse);
+  // let lon = props.coords.lon;
+  // let lat = props.coords.lat;
+  // let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=ecc7fef62a02dbb22a9dbe2d8e3727b7&units=metric`;
+  // axios.get(apiUrl).then(handleResponse);
 
 
   return (
