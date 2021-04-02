@@ -83,7 +83,7 @@ h1 {
   width: 33.33%;
   float: left;
 }
-canvas {
+div.column-2 canvas {
   display: inline-block;
   margin-left: calc((100% - 100px) / 2);
   width: auto;

@@ -1,8 +1,19 @@
 import React from "react";
 import "./css/daily.css";
-//import axios from 'axios';
+import WeatherIcon from './WeatherIcon';
+import axios from 'axios';
 
-export default function Daily() {
+export default function Daily(props) {
+
+  function handleResponse(response) {
+    console.log(response);
+  }
+  console.log(props.coords);
+  let lon = 57;
+  let lat = 14;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&appid=ecc7fef62a02dbb22a9dbe2d8e3727b7`;
+  axios.get(apiUrl).then(handleResponse);
+
   return (
     <div>
       <div className="daily">
@@ -12,10 +23,10 @@ export default function Daily() {
           <span className="daily-date">24 March</span>
         </p>
         <p className="daily-temp">
-          <span className="forecast-max">20</span>°<small>/</small>
-          <span className="forecast-min">15</span>°
+          <span className="forecast-max">20</span>°
+          <span className="forecast-min"> 15</span>°
         </p>
-        <img src="#" alt="weather icon" className="daily-image" />
+        <WeatherIcon code='01d' size={55} />
       </div>
       <div className="daily">
         <p>

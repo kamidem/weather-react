@@ -16,7 +16,8 @@
   font-size: 22px;
 }
 .forecast-min {
-  font-size: 19px;
+  font-size: 18px;
+  opacity: 0.7;
 }
 .daily-temp {
   margin-bottom: 0;
@@ -24,11 +25,9 @@
 .daily-weekday {
   font-size: 19px;
 }
-.daily-image {
-  font-size: 150%;
-  color: #a7c5eb;
-  width: 70px;
-}
 .daily-date {
   font-size: 14px;
+}
+div.daily canvas {
+  margin: 13px 0;
 }
