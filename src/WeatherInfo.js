@@ -35,7 +35,7 @@ export default function WeatherInfo(props) {
     </div>
 
     <div className="bottom-container">
-      <Daily coords={props.coords} />
+      <Daily coords={props} />
     </div>
   </div>)
 };

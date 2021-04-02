@@ -8,9 +8,9 @@ export default function Daily(props) {
   function handleResponse(response) {
     console.log(response);
   }
-  console.log(props.coords);
-  let lon = 57;
-  let lat = 14;
+
+  let lon = props.coords.lon;
+  let lat = props.coords.lon;
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&appid=ecc7fef62a02dbb22a9dbe2d8e3727b7`;
   axios.get(apiUrl).then(handleResponse);
 
