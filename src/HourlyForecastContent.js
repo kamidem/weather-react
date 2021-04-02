@@ -1,0 +1,29 @@
+import React from 'react';
+import WeatherIcon from './WeatherIcon';
+
+export default function HourlyForecastContent(props) {
+  console.log(props);
+
+  function hour() {
+    let date = new Date(props.forecast.dt * 1000);
+    let hour = date.getHours();
+    if (hour < 10) {
+      hour = `0${hour}`
+    }
+    let min = date.getMinutes();
+    if (min < 10) {
+      min = `0${min}`
+    }
+    return `${hour}:${min}`;
+
+  }
+
+
+  return (
+    <div className="hourly-each">
+      <span className="hourly-hour">{hour()}</span>
+      <WeatherIcon code={props.forecast.weather[0].icon} size={25} />
+      <span className="hourly-temp">{Math.round(props.forecast.temp)}</span>°
+    </div>
+  )
+}
