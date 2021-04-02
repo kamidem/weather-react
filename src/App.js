@@ -13,7 +13,7 @@ export default function App() {
 
 
   function handleResponse(response) {
-    console.log(response);
+
     setWeatherData({
       ready: true,
       date: new Date(response.data.dt * 1000),

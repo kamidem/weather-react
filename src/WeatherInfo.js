@@ -30,12 +30,12 @@ export default function WeatherInfo(props) {
       <div className="column-3">
         <FormatedDate date={props.info.date} />
         <br />
-        <Hourly />
+        <Hourly coords={props.info.coords} />
       </div>
     </div>
 
     <div className="bottom-container">
-      <Daily coords={props} />
+      <Daily coords={props.info.coords} />
     </div>
   </div>)
 };
