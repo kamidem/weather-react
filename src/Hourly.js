@@ -1,6 +1,7 @@
 import React from "react";
 import "./css/hourly.css";
 import axios from 'axios';
+import WeatherIcon from './WeatherIcon';
 
 export default function Hourly(props) {
 
@@ -22,7 +23,7 @@ export default function Hourly(props) {
       </div>
       <div className="hourly-each">
         <span className="hourly-hour">16:00</span>
-        <img src="#" alt="weather icon" className="hourly-image" />
+        <WeatherIcon code='01d' size={15} />
         <span className="hourly-temp">17</span>°
       </div>
       <div className="hourly-each">
