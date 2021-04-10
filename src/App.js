@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./css/app.css";
+import './css/layout.css';
 import github from "./img/github-icon.png";
 import cursor from './img/cursor.png';
 import location from "./img/location.png";

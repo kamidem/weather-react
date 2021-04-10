@@ -4,7 +4,6 @@ body * {
   box-sizing: border-box;
 }
 .app {
-  width: 800px;
   position: absolute;
   left: 50%;
   transform: translate(-50%);
@@ -26,19 +25,12 @@ h1 {
 
 /* ------------- TOP CONTAINER --------------*/
 
-.top-container {
-  margin-bottom: 5px;
-  height: 245px;
-  margin: 0;
-}
+/* .top-container {
+
+} */
 
 /* ------------- FIRST COLUMN --------------*/
-.column-1 {
-  display: inline-block;
-  width: 33.33%;
-  float: left;
-  padding: 10px 0 0 20px;
-}
+
 .city-name {
   display: inline-block;
   width: 100%;
@@ -78,11 +70,6 @@ h1 {
 
 /* ------------- SECOND COLUMN --------------*/
 
-.column-2 {
-  display: inline-block;
-  width: 33.33%;
-  float: left;
-}
 div.column-2 canvas {
   display: inline-block;
   margin-left: calc((100% - 100px) / 2);
@@ -104,11 +91,6 @@ div.column-2 canvas {
 }
 /* ------------- THIRD COLUMN --------------*/
 
-.column-3 {
-  display: inline-block;
-  width: 33.33%;
-  float: left;
-}
 .last-updated {
   font-size: 14px;
   margin: 0;

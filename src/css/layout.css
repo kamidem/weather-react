@@ -1,0 +1,60 @@
+/* -------------- RESPONSIVE ---------------- */
+.search-container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.top-container {
+  display: grid;
+}
+
+
+/* X-SMALL screen */
+@media(max-width: 576px) {
+  .app {
+    width: 350px;
+  }
+  .top-container {
+    grid-template-columns: 1fr; 
+  }
+ 
+}
+
+/* SMALL screen */
+@media(min-width: 576px) {
+  .app {
+    width: 550px;
+  }
+  .top-container {
+    grid-template-columns: 1fr; 
+  }
+}
+
+/* MEDIUM screen */
+@media(min-width: 768px) {
+  .app {
+    width: 700px;
+  }
+  .top-container {
+    grid-template-columns: 1fr 1fr 1fr; 
+  }
+}
+
+/* LARGE screen */
+@media(min-width: 992px) {
+  .app {
+    width: 800px;
+  }
+  .top-container {
+    grid-template-columns: 1fr 1fr 1fr; 
+  }
+}
+
+/* X-LARGE screen */
+@media(min-width: 1200px) {
+  .app {
+    width: 900px;
+  }
+  .top-container {
+    grid-template-columns: 1fr 1fr 1fr; 
+  }
+}
