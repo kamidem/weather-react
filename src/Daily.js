@@ -25,6 +25,8 @@ export default function Daily(props) {
             return (<div className='col'>
               <DailyForecastContent forecast={dailyForecast} />
             </div>);
+          } else {
+            return null;
           }
         })}
       </div>

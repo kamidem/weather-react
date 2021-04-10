@@ -2,7 +2,6 @@ import React from 'react';
 import WeatherIcon from './WeatherIcon';
 
 export default function HourlyForecastContent(props) {
-  console.log(props);
 
   function hour() {
     let date = new Date(props.forecast.dt * 1000);
