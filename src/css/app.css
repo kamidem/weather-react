@@ -108,6 +108,7 @@ div.column-2 canvas {
 .bottom-container {
   display: inline-block;
   width: 100%;
+  margin-top: 20px;
 }
 
 /* ------------- FOOTER --------------*/
