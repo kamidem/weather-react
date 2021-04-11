@@ -17,14 +17,18 @@ export default function WeatherInfo(props) {
       </div>
 
       <div className="column-2">
-        <WeatherIcon code={props.info.icon} size={100} />
-        <p className="weather-details">
-          feels like &emsp; <span className="feels-like">{Math.round(props.info.feels)}</span>°
-              <br />
-              wind speed &emsp; <span className="wind">{Math.round(props.info.wind * 3.6)}</span> km/h
-              <br />
-              humidity &emsp; <span className="humidity">{props.info.humidity}</span>%
-            </p>
+        <div className="column-2-row-1">
+          <WeatherIcon code={props.info.icon} size={100} />
+        </div>
+        <div className="column-2-row-2">
+          <p className="weather-details">
+            feels like &emsp; <span className="feels-like">{Math.round(props.info.feels)}</span>°
+            <br />
+            wind speed &emsp; <span className="wind">{Math.round(props.info.wind * 3.6)}</span> km/h
+            <br />
+            humidity &emsp; <span className="humidity">{props.info.humidity}</span>%
+          </p>
+        </div>
       </div>
 
       <div className="column-3">

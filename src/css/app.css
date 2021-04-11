@@ -30,11 +30,13 @@ h1 {
 } */
 
 /* ------------- FIRST COLUMN --------------*/
-
+.column-1 {
+  padding: 15px 0 0 30px;
+}
 .city-name {
   display: inline-block;
   width: 100%;
-  font-size: 40px;
+  font-size: 50px;
 }
 .today-description {
   display: inline-block;
@@ -42,7 +44,7 @@ h1 {
   font-size: 20px;
 }
 .main-temp {
-  font-size: 105px;
+  font-size: 110px;
 }
 
 .c-link,
@@ -69,14 +71,17 @@ h1 {
 }
 
 /* ------------- SECOND COLUMN --------------*/
-
+/* .column-2 .column-2-row-1 {
+  position: relative;
+  /* margin-top: 50px; 
+}*/
 div.column-2 canvas {
-  display: inline-block;
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
   margin-left: calc((100% - 100px) / 2);
-  width: auto;
-  margin-top: 24px;
-  margin-bottom: 10px;
-}
+} 
 .weather-details {
   line-height: 22px;
   margin: 0;
@@ -84,6 +89,7 @@ div.column-2 canvas {
   text-align: center;
   font-size: 13px;
 }
+.weather-details
 .feels-like,
 #wind,
 #humidity {
