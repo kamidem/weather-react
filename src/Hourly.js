@@ -24,13 +24,13 @@ export default function Hourly(props) {
         <div className="local-time-line">
           Local time <span className="local-time">12:47</span>
         </div>
-
-        <HourlyForecastContent forecast={forecast[1]} />
-        <HourlyForecastContent forecast={forecast[3]} />
-        <HourlyForecastContent forecast={forecast[5]} />
-        <HourlyForecastContent forecast={forecast[7]} />
-        <HourlyForecastContent forecast={forecast[9]} />
-
+        <div className="hourly-block">
+          <HourlyForecastContent forecast={forecast[1]} />
+          <HourlyForecastContent forecast={forecast[3]} />
+          <HourlyForecastContent forecast={forecast[5]} />
+          <HourlyForecastContent forecast={forecast[7]} />
+          <HourlyForecastContent forecast={forecast[9]} />
+        </div>
       </div>
     );
   } else {

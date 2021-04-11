@@ -1,5 +1,6 @@
 import React from 'react';
 import WeatherIcon from './WeatherIcon';
+import "./css/hourly.css";
 
 export default function HourlyForecastContent(props) {
 
@@ -22,7 +23,7 @@ export default function HourlyForecastContent(props) {
     <div className="hourly-each">
       <span className="hourly-hour">{hour()}</span>
       <WeatherIcon code={props.forecast.weather[0].icon} size={25} />
-      <span className="hourly-temp">{Math.round(props.forecast.temp)}</span>°
+      <span className="hourly-temp">{Math.round(props.forecast.temp)}°</span>
     </div>
   )
 }
