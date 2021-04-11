@@ -17,7 +17,7 @@ h1 {
 /* ------------- MAIN APP BODY --------------*/
 
 .main-body-container {
-  border-radius: 10px;
+  border-radius: 18px;
   background-image: linear-gradient(to top, #e7f0fd 0%, #accbee 100%);
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
 }
