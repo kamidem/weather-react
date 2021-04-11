@@ -1,9 +1,5 @@
 .daily {
-  /* display: inline-block; */
-  /* float: left; */
-  /* width: calc(20% - 10px); */
   text-align: center;
-  /* margin: 5px; */
   border-radius: 5px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.15);
   background-image: linear-gradient(
