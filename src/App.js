@@ -11,6 +11,7 @@ import "./css/search.css";
 export default function App() {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState('London');
+  const [unit, setUnit] = useState("celsius");
 
 
   function handleResponse(response) {
@@ -79,7 +80,7 @@ export default function App() {
             </button>
           </form>
         </div>
-        <WeatherInfo info={weatherData} />
+        <WeatherInfo info={weatherData} unit={unit} setUnit={setUnit} />
         <div className="code-by">
           <a href="https://github.com/kamidem/weather-react" target="blank">
             <img src={github} alt="github icon" className="github-icon" />

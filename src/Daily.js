@@ -23,7 +23,7 @@ export default function Daily(props) {
         {forecast.map(function (dailyForecast, index) {
           if (index < 5) {
             return (<div className='daily-col' key={index}>
-              <DailyForecastContent forecast={dailyForecast} />
+              <DailyForecastContent forecast={dailyForecast} unit={props.unit} />
             </div>);
           } else {
             return null;
