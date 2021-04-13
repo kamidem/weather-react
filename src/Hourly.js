@@ -21,9 +21,9 @@ export default function Hourly(props) {
   if (loaded) {
     return (
       <div>
-        <div className="local-time-line">
+        {/* <div className="local-time-line">
           Local time <span className="local-time">12:47</span>
-        </div>
+        </div> */}
         <div className="hourly-block">
           <HourlyForecastContent forecast={forecast[1]} />
           <HourlyForecastContent forecast={forecast[3]} />
