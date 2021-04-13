@@ -54,7 +54,7 @@
 /* -------------- X-SMALL screen --------------*/
 @media(max-width: 576px) {
   .app {
-    width: 350px;
+    width: 95%;
   }
   /* ------------- TOP CONTAINER --------------*/
   .top-container {
