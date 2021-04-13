@@ -12,7 +12,12 @@ h1 {
   text-align: center;
   margin: 8px;
   font-size: 36px;
+  /* position: relative; */
 }
+/* h1 span {
+  position: absolute;
+ 
+} */
 
 /* ------------- MAIN APP BODY --------------*/
 

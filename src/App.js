@@ -7,6 +7,7 @@ import location from "./img/location.png";
 import WeatherInfo from './WeatherInfo'
 import axios from 'axios';
 import "./css/search.css";
+import { FaReact } from 'react-icons/fa';
 
 export default function App() {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -51,7 +52,7 @@ export default function App() {
     return (
       <div className="app">
         <div className="page-title">
-          <h1>Weather App</h1>
+          <h1><span><FaReact /></span>React Weather App</h1>
         </div>
         <div className="search-container">
           <form onSubmit={handleSubmit}>
