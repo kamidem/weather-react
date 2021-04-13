@@ -44,7 +44,7 @@
 /* -------------- BOTTOM CONTAINER ---------------- */
 .bottom-container .row {
   display: grid;
-  gap: 10px 10px;
+  gap: 15px 15px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
 }
 .last-updated {
@@ -58,6 +58,7 @@
 @media(max-width: 576px) {
   .app {
     width: 95%;
+    min-width: 304px;
   }
   /* ------------- TOP CONTAINER --------------*/
   .top-container {
@@ -142,6 +143,10 @@
   .last-updated {
     font-size: 12px;
   }
+  /* --- DAILY FORECAST --- */
+  .bottom-container .row {
+  gap: 5px 5px; 
+}
 }
 
 /* -------------- MEDIUM screen -------------- */
@@ -163,6 +168,10 @@
   .last-updated {
     font-size: 14px;
   }
+  /* --- DAILY FORECAST --- */
+  .bottom-container .row {
+  gap: 10px 10px; 
+}
 }
 
 /* -------------- LARGE screen -------------- */
@@ -175,6 +184,9 @@
   }
   .main-temp {
   font-size: 110px;
+}
+.bottom-container .row {
+  gap: 15px 15px; 
 }
 }
 
