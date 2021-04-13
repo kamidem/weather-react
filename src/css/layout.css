@@ -8,6 +8,9 @@
 .search-container {
   display: grid;
 }
+.city-input {
+  width: 32%;
+}
 
 /* -------------- TOP CONTAINER ---------------- */
 .top-container {
@@ -65,6 +68,9 @@
   padding-left: 0;
   text-align: center;
   }
+  .main-temp {
+  font-size: 110px;
+  }
   /* ------------- COLUMN 2 --------------*/
   .column-2 {
   flex-direction: row;
@@ -107,6 +113,7 @@
   }
 }
 
+
 /* -------------- SMALL screen -------------- */
 @media(min-width: 576px) {
   .main-body-container {
@@ -118,10 +125,16 @@
   .top-container {
     grid-template-columns: 1fr 1fr 1fr;  
   }
+  .city-input {
+  width: 170px;
+  }
   /* ------------- COLUMN 1 --------------*/
   .column-1 {
   padding-left: 10px;
   }
+  .main-temp {
+  font-size: 100px;
+}
   /* ------------- COLUMN 3 --------------*/
   .hourly-each {
   margin-left: 35px;
@@ -160,6 +173,9 @@
   .top-container {
     grid-template-columns: 1fr 1fr 1fr; 
   }
+  .main-temp {
+  font-size: 110px;
+}
 }
 
 /* -------------- X-LARGE screen -------------- */
