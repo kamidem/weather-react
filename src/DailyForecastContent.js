@@ -2,7 +2,7 @@ import React from 'react';
 import WeatherIcon from './WeatherIcon';
 
 export default function DailyForecastContent(props) {
-  console.log(props.forecast.temp.max);
+
 
   function maxTemp() {
     let temperature = Math.round(props.forecast.temp.max);
@@ -14,7 +14,6 @@ export default function DailyForecastContent(props) {
 
   function minTemp() {
     let temperature = Math.round(props.forecast.temp.min);
-    console.log(props.unit);
     if (props.unit !== "celsius") {
       temperature = Math.round((temperature * 9) / 5 + 32);
     }

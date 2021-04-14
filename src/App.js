@@ -46,6 +46,18 @@ export default function App() {
     setCity(event.target.value);
   }
 
+  function currentLocationSearch(position) {
+    let currentLat = position.coords.latitude;
+    let currentLong = position.coords.longitude;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${currentLat}&lon=${currentLong}&units=metric&appid=ecc7fef62a02dbb22a9dbe2d8e3727b7`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function fetchLocation(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(currentLocationSearch);
+  }
+
 
 
   if (weatherData.ready) {
@@ -69,13 +81,14 @@ export default function App() {
               className="city-input"
               onChange={handleCityName}
             />
-            <button type="submit" className="search-button">
+            <button type="submit" className="search-button" onChange={handleCityName}>
               SEARCH
           </button>
             <button
               type="submit"
               className="my-location-button"
               title="find my location"
+              onClick={fetchLocation}
             >
               <img src={cursor} alt="find my location" />
             </button>

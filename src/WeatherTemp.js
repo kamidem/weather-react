@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import "./css/app.css";
 
 export default function WeatherTemp(props) {
