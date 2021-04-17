@@ -1,4 +1,5 @@
 import "./css/app.css";
+import React from 'react';
 
 export default function WeatherTemp(props) {
 
