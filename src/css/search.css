@@ -6,7 +6,8 @@
   border-radius: 22px;
   height: 44px;
   background-image: linear-gradient(to top, #accbee 0%, #a2c4e8 100%);
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1); */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.07);
 }
 .location-search-icon {
   display: inline-block;

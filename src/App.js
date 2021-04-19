@@ -50,10 +50,10 @@ export default function App() {
       <div className="app">
         <div className="page-title">
           <h1>
-            <span>
+            <span className='react-icon'>
               <FaReact />
             </span>
-            React Weather App
+            Weather App
           </h1>
         </div>
         <div className="search-container">

@@ -14,17 +14,18 @@ h1 {
   font-size: 36px;
   /* position: relative; */
 }
-/* h1 span {
-  position: absolute;
- 
-} */
+.react-icon {
+  line-height: 36px;
+  position: relative;
+  top: 5px;
+}
 
 /* ------------- MAIN APP BODY --------------*/
 
 .main-body-container {
   border-radius: 18px;
   background-image: linear-gradient(to top, #e7f0fd 0%, #accbee 100%);
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.07);
 }
 
 /* ------------- TOP CONTAINER --------------*/
@@ -108,7 +109,10 @@ div.column-2 canvas {
   font-size: 12px;
   margin-left: 5px;
   margin-bottom: 20px;
+  line-height: 14px;
 }
 .github-icon {
   width: 18px;
+  position: relative;
+  top: 3px;
 }
