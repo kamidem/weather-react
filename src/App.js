@@ -8,10 +8,13 @@ import WeatherInfo from "./WeatherInfo";
 import axios from "axios";
 import "./css/search.css";
 import { FaReact } from "react-icons/fa";
+import { DisappearedLoading } from 'react-loadingg';
+
 export default function App() {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState("London");
   const [unit, setUnit] = useState("celsius");
+
   function handleResponse(response) {
     setWeatherData({
       ready: true,
@@ -26,25 +29,31 @@ export default function App() {
       coords: response.data.coord,
     });
   }
+
   function search() {
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=ecc7fef62a02dbb22a9dbe2d8e3727b7`;
     axios.get(apiUrl).then(handleResponse);
   }
+
   function searchLocation(position) {
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=ecc7fef62a02dbb22a9dbe2d8e3727b7`;
     axios.get(apiUrl).then(handleResponse);
   }
+
   function handleSubmit(event) {
     event.preventDefault();
     search();
   }
+
   function handleCityName(event) {
     setCity(event.target.value);
   }
+
   function handlePosition(event) {
     event.preventDefault();
     navigator.geolocation.getCurrentPosition(searchLocation);
   }
+
   if (weatherData.ready) {
     return (
       <div className="app">
@@ -99,6 +108,6 @@ export default function App() {
   } else {
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=ecc7fef62a02dbb22a9dbe2d8e3727b7`;
     axios.get(apiUrl).then(handleResponse);
-    return "Loading...";
+    return <DisappearedLoading color={'#a2c4e8'} />;
   }
 }
